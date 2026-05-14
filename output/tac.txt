@@ -1,0 +1,4 @@
+func main:
+x = "hello, World"
+print x
+endfunc

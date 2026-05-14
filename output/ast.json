@@ -1,0 +1,47 @@
+{
+  "node": "Program",
+  "globals": [
+    {
+      "node": "UsingNamespace",
+      "name": "std"
+    },
+    {
+      "node": "Function",
+      "return_type": "int",
+      "name": "main",
+      "params": [],
+      "body": {
+        "node": "Block",
+        "stmts": [
+          {
+            "node": "DeclStmt",
+            "decl": {
+              "node": "Decl",
+              "var_type": "string",
+              "declarators": [
+                {
+                  "node": "Declarator",
+                  "name": "x",
+                  "array": null,
+                  "init": {
+                    "node": "String",
+                    "value": "hello, World"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "node": "Cout",
+            "items": [
+              {
+                "node": "Identifier",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

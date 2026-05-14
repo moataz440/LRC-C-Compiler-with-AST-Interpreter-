@@ -1,0 +1,745 @@
+{
+  "kind": "nonterminal",
+  "lhs": "Program",
+  "rhs": [
+    "GlobalItems"
+  ],
+  "production": "Program -> GlobalItems",
+  "children": [
+    {
+      "kind": "nonterminal",
+      "lhs": "GlobalItems",
+      "rhs": [
+        "GlobalItem",
+        "GlobalItems"
+      ],
+      "production": "GlobalItems -> GlobalItem GlobalItems",
+      "children": [
+        {
+          "kind": "nonterminal",
+          "lhs": "GlobalItem",
+          "rhs": [
+            "UsingDecl",
+            "SEMI"
+          ],
+          "production": "GlobalItem -> UsingDecl SEMI",
+          "children": [
+            {
+              "kind": "nonterminal",
+              "lhs": "UsingDecl",
+              "rhs": [
+                "USING",
+                "NAMESPACE",
+                "ID"
+              ],
+              "production": "UsingDecl -> USING NAMESPACE ID",
+              "children": [
+                {
+                  "kind": "terminal",
+                  "symbol": "USING",
+                  "lexeme": "using"
+                },
+                {
+                  "kind": "terminal",
+                  "symbol": "NAMESPACE",
+                  "lexeme": "namespace"
+                },
+                {
+                  "kind": "terminal",
+                  "symbol": "ID",
+                  "lexeme": "std"
+                }
+              ]
+            },
+            {
+              "kind": "terminal",
+              "symbol": "SEMI",
+              "lexeme": ";"
+            }
+          ]
+        },
+        {
+          "kind": "nonterminal",
+          "lhs": "GlobalItems",
+          "rhs": [
+            "GlobalItem",
+            "GlobalItems"
+          ],
+          "production": "GlobalItems -> GlobalItem GlobalItems",
+          "children": [
+            {
+              "kind": "nonterminal",
+              "lhs": "GlobalItem",
+              "rhs": [
+                "FuncDef"
+              ],
+              "production": "GlobalItem -> FuncDef",
+              "children": [
+                {
+                  "kind": "nonterminal",
+                  "lhs": "FuncDef",
+                  "rhs": [
+                    "TYPE",
+                    "ID",
+                    "LPAREN",
+                    "ParamsOpt",
+                    "RPAREN",
+                    "Block"
+                  ],
+                  "production": "FuncDef -> TYPE ID LPAREN ParamsOpt RPAREN Block",
+                  "children": [
+                    {
+                      "kind": "terminal",
+                      "symbol": "TYPE",
+                      "lexeme": "int"
+                    },
+                    {
+                      "kind": "terminal",
+                      "symbol": "ID",
+                      "lexeme": "main"
+                    },
+                    {
+                      "kind": "terminal",
+                      "symbol": "LPAREN",
+                      "lexeme": "("
+                    },
+                    {
+                      "kind": "nonterminal",
+                      "lhs": "ParamsOpt",
+                      "rhs": [],
+                      "production": "ParamsOpt -> \u03b5",
+                      "children": []
+                    },
+                    {
+                      "kind": "terminal",
+                      "symbol": "RPAREN",
+                      "lexeme": ")"
+                    },
+                    {
+                      "kind": "nonterminal",
+                      "lhs": "Block",
+                      "rhs": [
+                        "LBRACE",
+                        "Stmts",
+                        "RBRACE"
+                      ],
+                      "production": "Block -> LBRACE Stmts RBRACE",
+                      "children": [
+                        {
+                          "kind": "terminal",
+                          "symbol": "LBRACE",
+                          "lexeme": "{"
+                        },
+                        {
+                          "kind": "nonterminal",
+                          "lhs": "Stmts",
+                          "rhs": [
+                            "Stmt",
+                            "Stmts"
+                          ],
+                          "production": "Stmts -> Stmt Stmts",
+                          "children": [
+                            {
+                              "kind": "nonterminal",
+                              "lhs": "Stmt",
+                              "rhs": [
+                                "MatchedStmt"
+                              ],
+                              "production": "Stmt -> MatchedStmt",
+                              "children": [
+                                {
+                                  "kind": "nonterminal",
+                                  "lhs": "MatchedStmt",
+                                  "rhs": [
+                                    "DeclStmt",
+                                    "SEMI"
+                                  ],
+                                  "production": "MatchedStmt -> DeclStmt SEMI",
+                                  "children": [
+                                    {
+                                      "kind": "nonterminal",
+                                      "lhs": "DeclStmt",
+                                      "rhs": [
+                                        "TYPE",
+                                        "Declarators"
+                                      ],
+                                      "production": "DeclStmt -> TYPE Declarators",
+                                      "children": [
+                                        {
+                                          "kind": "terminal",
+                                          "symbol": "TYPE",
+                                          "lexeme": "string"
+                                        },
+                                        {
+                                          "kind": "nonterminal",
+                                          "lhs": "Declarators",
+                                          "rhs": [
+                                            "Declarator",
+                                            "DeclaratorsTail"
+                                          ],
+                                          "production": "Declarators -> Declarator DeclaratorsTail",
+                                          "children": [
+                                            {
+                                              "kind": "nonterminal",
+                                              "lhs": "Declarator",
+                                              "rhs": [
+                                                "ID",
+                                                "ArrayOpt",
+                                                "InitOpt"
+                                              ],
+                                              "production": "Declarator -> ID ArrayOpt InitOpt",
+                                              "children": [
+                                                {
+                                                  "kind": "terminal",
+                                                  "symbol": "ID",
+                                                  "lexeme": "x"
+                                                },
+                                                {
+                                                  "kind": "nonterminal",
+                                                  "lhs": "ArrayOpt",
+                                                  "rhs": [],
+                                                  "production": "ArrayOpt -> \u03b5",
+                                                  "children": []
+                                                },
+                                                {
+                                                  "kind": "nonterminal",
+                                                  "lhs": "InitOpt",
+                                                  "rhs": [
+                                                    "ASSIGN",
+                                                    "Initializer"
+                                                  ],
+                                                  "production": "InitOpt -> ASSIGN Initializer",
+                                                  "children": [
+                                                    {
+                                                      "kind": "terminal",
+                                                      "symbol": "ASSIGN",
+                                                      "lexeme": "="
+                                                    },
+                                                    {
+                                                      "kind": "nonterminal",
+                                                      "lhs": "Initializer",
+                                                      "rhs": [
+                                                        "Expr"
+                                                      ],
+                                                      "production": "Initializer -> Expr",
+                                                      "children": [
+                                                        {
+                                                          "kind": "nonterminal",
+                                                          "lhs": "Expr",
+                                                          "rhs": [
+                                                            "AssignExpr"
+                                                          ],
+                                                          "production": "Expr -> AssignExpr",
+                                                          "children": [
+                                                            {
+                                                              "kind": "nonterminal",
+                                                              "lhs": "AssignExpr",
+                                                              "rhs": [
+                                                                "OrExpr",
+                                                                "AssignTail"
+                                                              ],
+                                                              "production": "AssignExpr -> OrExpr AssignTail",
+                                                              "children": [
+                                                                {
+                                                                  "kind": "nonterminal",
+                                                                  "lhs": "OrExpr",
+                                                                  "rhs": [
+                                                                    "AndExpr",
+                                                                    "OrTail"
+                                                                  ],
+                                                                  "production": "OrExpr -> AndExpr OrTail",
+                                                                  "children": [
+                                                                    {
+                                                                      "kind": "nonterminal",
+                                                                      "lhs": "AndExpr",
+                                                                      "rhs": [
+                                                                        "EqualityExpr",
+                                                                        "AndTail"
+                                                                      ],
+                                                                      "production": "AndExpr -> EqualityExpr AndTail",
+                                                                      "children": [
+                                                                        {
+                                                                          "kind": "nonterminal",
+                                                                          "lhs": "EqualityExpr",
+                                                                          "rhs": [
+                                                                            "RelExpr",
+                                                                            "EqTail"
+                                                                          ],
+                                                                          "production": "EqualityExpr -> RelExpr EqTail",
+                                                                          "children": [
+                                                                            {
+                                                                              "kind": "nonterminal",
+                                                                              "lhs": "RelExpr",
+                                                                              "rhs": [
+                                                                                "AddExpr",
+                                                                                "RelTail"
+                                                                              ],
+                                                                              "production": "RelExpr -> AddExpr RelTail",
+                                                                              "children": [
+                                                                                {
+                                                                                  "kind": "nonterminal",
+                                                                                  "lhs": "AddExpr",
+                                                                                  "rhs": [
+                                                                                    "MulExpr",
+                                                                                    "AddTail"
+                                                                                  ],
+                                                                                  "production": "AddExpr -> MulExpr AddTail",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "kind": "nonterminal",
+                                                                                      "lhs": "MulExpr",
+                                                                                      "rhs": [
+                                                                                        "UnaryExpr",
+                                                                                        "MulTail"
+                                                                                      ],
+                                                                                      "production": "MulExpr -> UnaryExpr MulTail",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "kind": "nonterminal",
+                                                                                          "lhs": "UnaryExpr",
+                                                                                          "rhs": [
+                                                                                            "PostfixExpr"
+                                                                                          ],
+                                                                                          "production": "UnaryExpr -> PostfixExpr",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "kind": "nonterminal",
+                                                                                              "lhs": "PostfixExpr",
+                                                                                              "rhs": [
+                                                                                                "Primary",
+                                                                                                "PostfixTail",
+                                                                                                "PostfixIncDecOpt"
+                                                                                              ],
+                                                                                              "production": "PostfixExpr -> Primary PostfixTail PostfixIncDecOpt",
+                                                                                              "children": [
+                                                                                                {
+                                                                                                  "kind": "nonterminal",
+                                                                                                  "lhs": "Primary",
+                                                                                                  "rhs": [
+                                                                                                    "STRING_LIT"
+                                                                                                  ],
+                                                                                                  "production": "Primary -> STRING_LIT",
+                                                                                                  "children": [
+                                                                                                    {
+                                                                                                      "kind": "terminal",
+                                                                                                      "symbol": "STRING_LIT",
+                                                                                                      "lexeme": "hello, World"
+                                                                                                    }
+                                                                                                  ]
+                                                                                                },
+                                                                                                {
+                                                                                                  "kind": "nonterminal",
+                                                                                                  "lhs": "PostfixTail",
+                                                                                                  "rhs": [],
+                                                                                                  "production": "PostfixTail -> \u03b5",
+                                                                                                  "children": []
+                                                                                                },
+                                                                                                {
+                                                                                                  "kind": "nonterminal",
+                                                                                                  "lhs": "PostfixIncDecOpt",
+                                                                                                  "rhs": [],
+                                                                                                  "production": "PostfixIncDecOpt -> \u03b5",
+                                                                                                  "children": []
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        },
+                                                                                        {
+                                                                                          "kind": "nonterminal",
+                                                                                          "lhs": "MulTail",
+                                                                                          "rhs": [],
+                                                                                          "production": "MulTail -> \u03b5",
+                                                                                          "children": []
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "kind": "nonterminal",
+                                                                                      "lhs": "AddTail",
+                                                                                      "rhs": [],
+                                                                                      "production": "AddTail -> \u03b5",
+                                                                                      "children": []
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "kind": "nonterminal",
+                                                                                  "lhs": "RelTail",
+                                                                                  "rhs": [],
+                                                                                  "production": "RelTail -> \u03b5",
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "kind": "nonterminal",
+                                                                              "lhs": "EqTail",
+                                                                              "rhs": [],
+                                                                              "production": "EqTail -> \u03b5",
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "kind": "nonterminal",
+                                                                          "lhs": "AndTail",
+                                                                          "rhs": [],
+                                                                          "production": "AndTail -> \u03b5",
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "kind": "nonterminal",
+                                                                      "lhs": "OrTail",
+                                                                      "rhs": [],
+                                                                      "production": "OrTail -> \u03b5",
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "kind": "nonterminal",
+                                                                  "lhs": "AssignTail",
+                                                                  "rhs": [],
+                                                                  "production": "AssignTail -> \u03b5",
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "kind": "nonterminal",
+                                              "lhs": "DeclaratorsTail",
+                                              "rhs": [],
+                                              "production": "DeclaratorsTail -> \u03b5",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "kind": "terminal",
+                                      "symbol": "SEMI",
+                                      "lexeme": ";"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "kind": "nonterminal",
+                              "lhs": "Stmts",
+                              "rhs": [
+                                "Stmt",
+                                "Stmts"
+                              ],
+                              "production": "Stmts -> Stmt Stmts",
+                              "children": [
+                                {
+                                  "kind": "nonterminal",
+                                  "lhs": "Stmt",
+                                  "rhs": [
+                                    "MatchedStmt"
+                                  ],
+                                  "production": "Stmt -> MatchedStmt",
+                                  "children": [
+                                    {
+                                      "kind": "nonterminal",
+                                      "lhs": "MatchedStmt",
+                                      "rhs": [
+                                        "IOStmt",
+                                        "SEMI"
+                                      ],
+                                      "production": "MatchedStmt -> IOStmt SEMI",
+                                      "children": [
+                                        {
+                                          "kind": "nonterminal",
+                                          "lhs": "IOStmt",
+                                          "rhs": [
+                                            "COUT",
+                                            "CoutTail"
+                                          ],
+                                          "production": "IOStmt -> COUT CoutTail",
+                                          "children": [
+                                            {
+                                              "kind": "terminal",
+                                              "symbol": "COUT",
+                                              "lexeme": "cout"
+                                            },
+                                            {
+                                              "kind": "nonterminal",
+                                              "lhs": "CoutTail",
+                                              "rhs": [
+                                                "LSHIFT",
+                                                "CoutItem",
+                                                "CoutTail"
+                                              ],
+                                              "production": "CoutTail -> LSHIFT CoutItem CoutTail",
+                                              "children": [
+                                                {
+                                                  "kind": "terminal",
+                                                  "symbol": "LSHIFT",
+                                                  "lexeme": "<<"
+                                                },
+                                                {
+                                                  "kind": "nonterminal",
+                                                  "lhs": "CoutItem",
+                                                  "rhs": [
+                                                    "Expr"
+                                                  ],
+                                                  "production": "CoutItem -> Expr",
+                                                  "children": [
+                                                    {
+                                                      "kind": "nonterminal",
+                                                      "lhs": "Expr",
+                                                      "rhs": [
+                                                        "AssignExpr"
+                                                      ],
+                                                      "production": "Expr -> AssignExpr",
+                                                      "children": [
+                                                        {
+                                                          "kind": "nonterminal",
+                                                          "lhs": "AssignExpr",
+                                                          "rhs": [
+                                                            "OrExpr",
+                                                            "AssignTail"
+                                                          ],
+                                                          "production": "AssignExpr -> OrExpr AssignTail",
+                                                          "children": [
+                                                            {
+                                                              "kind": "nonterminal",
+                                                              "lhs": "OrExpr",
+                                                              "rhs": [
+                                                                "AndExpr",
+                                                                "OrTail"
+                                                              ],
+                                                              "production": "OrExpr -> AndExpr OrTail",
+                                                              "children": [
+                                                                {
+                                                                  "kind": "nonterminal",
+                                                                  "lhs": "AndExpr",
+                                                                  "rhs": [
+                                                                    "EqualityExpr",
+                                                                    "AndTail"
+                                                                  ],
+                                                                  "production": "AndExpr -> EqualityExpr AndTail",
+                                                                  "children": [
+                                                                    {
+                                                                      "kind": "nonterminal",
+                                                                      "lhs": "EqualityExpr",
+                                                                      "rhs": [
+                                                                        "RelExpr",
+                                                                        "EqTail"
+                                                                      ],
+                                                                      "production": "EqualityExpr -> RelExpr EqTail",
+                                                                      "children": [
+                                                                        {
+                                                                          "kind": "nonterminal",
+                                                                          "lhs": "RelExpr",
+                                                                          "rhs": [
+                                                                            "AddExpr",
+                                                                            "RelTail"
+                                                                          ],
+                                                                          "production": "RelExpr -> AddExpr RelTail",
+                                                                          "children": [
+                                                                            {
+                                                                              "kind": "nonterminal",
+                                                                              "lhs": "AddExpr",
+                                                                              "rhs": [
+                                                                                "MulExpr",
+                                                                                "AddTail"
+                                                                              ],
+                                                                              "production": "AddExpr -> MulExpr AddTail",
+                                                                              "children": [
+                                                                                {
+                                                                                  "kind": "nonterminal",
+                                                                                  "lhs": "MulExpr",
+                                                                                  "rhs": [
+                                                                                    "UnaryExpr",
+                                                                                    "MulTail"
+                                                                                  ],
+                                                                                  "production": "MulExpr -> UnaryExpr MulTail",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "kind": "nonterminal",
+                                                                                      "lhs": "UnaryExpr",
+                                                                                      "rhs": [
+                                                                                        "PostfixExpr"
+                                                                                      ],
+                                                                                      "production": "UnaryExpr -> PostfixExpr",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "kind": "nonterminal",
+                                                                                          "lhs": "PostfixExpr",
+                                                                                          "rhs": [
+                                                                                            "Primary",
+                                                                                            "PostfixTail",
+                                                                                            "PostfixIncDecOpt"
+                                                                                          ],
+                                                                                          "production": "PostfixExpr -> Primary PostfixTail PostfixIncDecOpt",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "kind": "nonterminal",
+                                                                                              "lhs": "Primary",
+                                                                                              "rhs": [
+                                                                                                "ID"
+                                                                                              ],
+                                                                                              "production": "Primary -> ID",
+                                                                                              "children": [
+                                                                                                {
+                                                                                                  "kind": "terminal",
+                                                                                                  "symbol": "ID",
+                                                                                                  "lexeme": "x"
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            {
+                                                                                              "kind": "nonterminal",
+                                                                                              "lhs": "PostfixTail",
+                                                                                              "rhs": [],
+                                                                                              "production": "PostfixTail -> \u03b5",
+                                                                                              "children": []
+                                                                                            },
+                                                                                            {
+                                                                                              "kind": "nonterminal",
+                                                                                              "lhs": "PostfixIncDecOpt",
+                                                                                              "rhs": [],
+                                                                                              "production": "PostfixIncDecOpt -> \u03b5",
+                                                                                              "children": []
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "kind": "nonterminal",
+                                                                                      "lhs": "MulTail",
+                                                                                      "rhs": [],
+                                                                                      "production": "MulTail -> \u03b5",
+                                                                                      "children": []
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "kind": "nonterminal",
+                                                                                  "lhs": "AddTail",
+                                                                                  "rhs": [],
+                                                                                  "production": "AddTail -> \u03b5",
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "kind": "nonterminal",
+                                                                              "lhs": "RelTail",
+                                                                              "rhs": [],
+                                                                              "production": "RelTail -> \u03b5",
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "kind": "nonterminal",
+                                                                          "lhs": "EqTail",
+                                                                          "rhs": [],
+                                                                          "production": "EqTail -> \u03b5",
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "kind": "nonterminal",
+                                                                      "lhs": "AndTail",
+                                                                      "rhs": [],
+                                                                      "production": "AndTail -> \u03b5",
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "kind": "nonterminal",
+                                                                  "lhs": "OrTail",
+                                                                  "rhs": [],
+                                                                  "production": "OrTail -> \u03b5",
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "kind": "nonterminal",
+                                                              "lhs": "AssignTail",
+                                                              "rhs": [],
+                                                              "production": "AssignTail -> \u03b5",
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "kind": "nonterminal",
+                                                  "lhs": "CoutTail",
+                                                  "rhs": [],
+                                                  "production": "CoutTail -> \u03b5",
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "kind": "terminal",
+                                          "symbol": "SEMI",
+                                          "lexeme": ";"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "nonterminal",
+                                  "lhs": "Stmts",
+                                  "rhs": [],
+                                  "production": "Stmts -> \u03b5",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "terminal",
+                          "symbol": "RBRACE",
+                          "lexeme": "}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "nonterminal",
+              "lhs": "GlobalItems",
+              "rhs": [],
+              "production": "GlobalItems -> \u03b5",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

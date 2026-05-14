@@ -1,0 +1,1775 @@
+[
+  {
+    "step": 1,
+    "state_stack": [
+      0
+    ],
+    "lookahead": {
+      "type": "USING",
+      "lexeme": "using"
+    },
+    "action": "shift; go to state 7"
+  },
+  {
+    "step": 2,
+    "state_stack": [
+      0,
+      7
+    ],
+    "lookahead": {
+      "type": "NAMESPACE",
+      "lexeme": "namespace"
+    },
+    "action": "shift; go to state 14"
+  },
+  {
+    "step": 3,
+    "state_stack": [
+      0,
+      7,
+      14
+    ],
+    "lookahead": {
+      "type": "ID",
+      "lexeme": "std"
+    },
+    "action": "shift; go to state 21"
+  },
+  {
+    "step": 4,
+    "state_stack": [
+      0,
+      7,
+      14,
+      21
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce UsingDecl -> USING NAMESPACE ID"
+  },
+  {
+    "step": 5,
+    "state_stack": [
+      0,
+      8
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "shift; go to state 15"
+  },
+  {
+    "step": 6,
+    "state_stack": [
+      0,
+      8,
+      15
+    ],
+    "lookahead": {
+      "type": "TYPE",
+      "lexeme": "int"
+    },
+    "action": "reduce GlobalItem -> UsingDecl SEMI"
+  },
+  {
+    "step": 7,
+    "state_stack": [
+      0,
+      1
+    ],
+    "lookahead": {
+      "type": "TYPE",
+      "lexeme": "int"
+    },
+    "action": "shift; go to state 6"
+  },
+  {
+    "step": 8,
+    "state_stack": [
+      0,
+      1,
+      6
+    ],
+    "lookahead": {
+      "type": "ID",
+      "lexeme": "main"
+    },
+    "action": "shift; go to state 12"
+  },
+  {
+    "step": 9,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12
+    ],
+    "lookahead": {
+      "type": "LPAREN",
+      "lexeme": "("
+    },
+    "action": "shift; go to state 18"
+  },
+  {
+    "step": 10,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18
+    ],
+    "lookahead": {
+      "type": "RPAREN",
+      "lexeme": ")"
+    },
+    "action": "reduce ParamsOpt -> \u03b5"
+  },
+  {
+    "step": 11,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27
+    ],
+    "lookahead": {
+      "type": "RPAREN",
+      "lexeme": ")"
+    },
+    "action": "shift; go to state 36"
+  },
+  {
+    "step": 12,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36
+    ],
+    "lookahead": {
+      "type": "LBRACE",
+      "lexeme": "{"
+    },
+    "action": "shift; go to state 63"
+  },
+  {
+    "step": 13,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63
+    ],
+    "lookahead": {
+      "type": "TYPE",
+      "lexeme": "string"
+    },
+    "action": "shift; go to state 147"
+  },
+  {
+    "step": 14,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147
+    ],
+    "lookahead": {
+      "type": "ID",
+      "lexeme": "x"
+    },
+    "action": "shift; go to state 23"
+  },
+  {
+    "step": 15,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23
+    ],
+    "lookahead": {
+      "type": "ASSIGN",
+      "lexeme": "="
+    },
+    "action": "reduce ArrayOpt -> \u03b5"
+  },
+  {
+    "step": 16,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19
+    ],
+    "lookahead": {
+      "type": "ASSIGN",
+      "lexeme": "="
+    },
+    "action": "shift; go to state 29"
+  },
+  {
+    "step": 17,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29
+    ],
+    "lookahead": {
+      "type": "STRING_LIT",
+      "lexeme": "hello, World"
+    },
+    "action": "shift; go to state 55"
+  },
+  {
+    "step": 18,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      55
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Primary -> STRING_LIT"
+  },
+  {
+    "step": 19,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      58
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixTail -> \u03b5"
+  },
+  {
+    "step": 20,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      58,
+      110
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixIncDecOpt -> \u03b5"
+  },
+  {
+    "step": 21,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      58,
+      110,
+      217
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixExpr -> Primary PostfixTail PostfixIncDecOpt"
+  },
+  {
+    "step": 22,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      40
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce UnaryExpr -> PostfixExpr"
+  },
+  {
+    "step": 23,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      57
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce MulTail -> \u03b5"
+  },
+  {
+    "step": 24,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      57,
+      106
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce MulExpr -> UnaryExpr MulTail"
+  },
+  {
+    "step": 25,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      52
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AddTail -> \u03b5"
+  },
+  {
+    "step": 26,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      52,
+      101
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AddExpr -> MulExpr AddTail"
+  },
+  {
+    "step": 27,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      38
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce RelTail -> \u03b5"
+  },
+  {
+    "step": 28,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      38,
+      86
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce RelExpr -> AddExpr RelTail"
+  },
+  {
+    "step": 29,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      41
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce EqTail -> \u03b5"
+  },
+  {
+    "step": 30,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      41,
+      92
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce EqualityExpr -> RelExpr EqTail"
+  },
+  {
+    "step": 31,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      47
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AndTail -> \u03b5"
+  },
+  {
+    "step": 32,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      47,
+      96
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AndExpr -> EqualityExpr AndTail"
+  },
+  {
+    "step": 33,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      53
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce OrTail -> \u03b5"
+  },
+  {
+    "step": 34,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      53,
+      104
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce OrExpr -> AndExpr OrTail"
+  },
+  {
+    "step": 35,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      49
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AssignTail -> \u03b5"
+  },
+  {
+    "step": 36,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      49,
+      97
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AssignExpr -> OrExpr AssignTail"
+  },
+  {
+    "step": 37,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      56
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Expr -> AssignExpr"
+  },
+  {
+    "step": 38,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      39
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Initializer -> Expr"
+  },
+  {
+    "step": 39,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      29,
+      48
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce InitOpt -> ASSIGN Initializer"
+  },
+  {
+    "step": 40,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      23,
+      19,
+      28
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Declarator -> ID ArrayOpt InitOpt"
+  },
+  {
+    "step": 41,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      11
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce DeclaratorsTail -> \u03b5"
+  },
+  {
+    "step": 42,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      11,
+      16
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Declarators -> Declarator DeclaratorsTail"
+  },
+  {
+    "step": 43,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      147,
+      13
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce DeclStmt -> TYPE Declarators"
+  },
+  {
+    "step": 44,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      137
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "shift; go to state 273"
+  },
+  {
+    "step": 45,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      137,
+      273
+    ],
+    "lookahead": {
+      "type": "COUT",
+      "lexeme": "cout"
+    },
+    "action": "reduce MatchedStmt -> DeclStmt SEMI"
+  },
+  {
+    "step": 46,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      155
+    ],
+    "lookahead": {
+      "type": "COUT",
+      "lexeme": "cout"
+    },
+    "action": "reduce Stmt -> MatchedStmt"
+  },
+  {
+    "step": 47,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173
+    ],
+    "lookahead": {
+      "type": "COUT",
+      "lexeme": "cout"
+    },
+    "action": "shift; go to state 161"
+  },
+  {
+    "step": 48,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161
+    ],
+    "lookahead": {
+      "type": "LSHIFT",
+      "lexeme": "<<"
+    },
+    "action": "shift; go to state 301"
+  },
+  {
+    "step": 49,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301
+    ],
+    "lookahead": {
+      "type": "ID",
+      "lexeme": "x"
+    },
+    "action": "shift; go to state 424"
+  },
+  {
+    "step": 50,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      424
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Primary -> ID"
+  },
+  {
+    "step": 51,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      437
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixTail -> \u03b5"
+  },
+  {
+    "step": 52,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      437,
+      538
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixIncDecOpt -> \u03b5"
+  },
+  {
+    "step": 53,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      437,
+      538,
+      591
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce PostfixExpr -> Primary PostfixTail PostfixIncDecOpt"
+  },
+  {
+    "step": 54,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      418
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce UnaryExpr -> PostfixExpr"
+  },
+  {
+    "step": 55,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      436
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce MulTail -> \u03b5"
+  },
+  {
+    "step": 56,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      436,
+      534
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce MulExpr -> UnaryExpr MulTail"
+  },
+  {
+    "step": 57,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      431
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AddTail -> \u03b5"
+  },
+  {
+    "step": 58,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      431,
+      529
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AddExpr -> MulExpr AddTail"
+  },
+  {
+    "step": 59,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      416
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce RelTail -> \u03b5"
+  },
+  {
+    "step": 60,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      416,
+      513
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce RelExpr -> AddExpr RelTail"
+  },
+  {
+    "step": 61,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      419
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce EqTail -> \u03b5"
+  },
+  {
+    "step": 62,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      419,
+      519
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce EqualityExpr -> RelExpr EqTail"
+  },
+  {
+    "step": 63,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      427
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AndTail -> \u03b5"
+  },
+  {
+    "step": 64,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      427,
+      524
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AndExpr -> EqualityExpr AndTail"
+  },
+  {
+    "step": 65,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      432
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce OrTail -> \u03b5"
+  },
+  {
+    "step": 66,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      432,
+      532
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce OrExpr -> AndExpr OrTail"
+  },
+  {
+    "step": 67,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      428
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AssignTail -> \u03b5"
+  },
+  {
+    "step": 68,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      428,
+      525
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce AssignExpr -> OrExpr AssignTail"
+  },
+  {
+    "step": 69,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      435
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce Expr -> AssignExpr"
+  },
+  {
+    "step": 70,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      417
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce CoutItem -> Expr"
+  },
+  {
+    "step": 71,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      426
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce CoutTail -> \u03b5"
+  },
+  {
+    "step": 72,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      301,
+      426,
+      522
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce CoutTail -> LSHIFT CoutItem CoutTail"
+  },
+  {
+    "step": 73,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      161,
+      300
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "reduce IOStmt -> COUT CoutTail"
+  },
+  {
+    "step": 74,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      148
+    ],
+    "lookahead": {
+      "type": "SEMI",
+      "lexeme": ";"
+    },
+    "action": "shift; go to state 287"
+  },
+  {
+    "step": 75,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      148,
+      287
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "reduce MatchedStmt -> IOStmt SEMI"
+  },
+  {
+    "step": 76,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      155
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "reduce Stmt -> MatchedStmt"
+  },
+  {
+    "step": 77,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      173
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "reduce Stmts -> \u03b5"
+  },
+  {
+    "step": 78,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      173,
+      316
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "reduce Stmts -> Stmt Stmts"
+  },
+  {
+    "step": 79,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      173,
+      316
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "reduce Stmts -> Stmt Stmts"
+  },
+  {
+    "step": 80,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      153
+    ],
+    "lookahead": {
+      "type": "RBRACE",
+      "lexeme": "}"
+    },
+    "action": "shift; go to state 292"
+  },
+  {
+    "step": 81,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      63,
+      153,
+      292
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce Block -> LBRACE Stmts RBRACE"
+  },
+  {
+    "step": 82,
+    "state_stack": [
+      0,
+      1,
+      6,
+      12,
+      18,
+      27,
+      36,
+      62
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce FuncDef -> TYPE ID LPAREN ParamsOpt RPAREN Block"
+  },
+  {
+    "step": 83,
+    "state_stack": [
+      0,
+      1,
+      2
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce GlobalItem -> FuncDef"
+  },
+  {
+    "step": 84,
+    "state_stack": [
+      0,
+      1,
+      1
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce GlobalItems -> \u03b5"
+  },
+  {
+    "step": 85,
+    "state_stack": [
+      0,
+      1,
+      1,
+      9
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce GlobalItems -> GlobalItem GlobalItems"
+  },
+  {
+    "step": 86,
+    "state_stack": [
+      0,
+      1,
+      9
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce GlobalItems -> GlobalItem GlobalItems"
+  },
+  {
+    "step": 87,
+    "state_stack": [
+      0,
+      5
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "reduce Program -> GlobalItems"
+  },
+  {
+    "step": 88,
+    "state_stack": [
+      0,
+      4
+    ],
+    "lookahead": {
+      "type": "EOF",
+      "lexeme": "$"
+    },
+    "action": "accept"
+  }
+]

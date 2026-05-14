@@ -1,0 +1,2 @@
+"""Assembler / object-like emitters."""
+

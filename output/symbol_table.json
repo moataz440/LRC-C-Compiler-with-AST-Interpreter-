@@ -1,0 +1,36 @@
+{
+  "merged": {
+    "main": "int()"
+  },
+  "scopes": [
+    {
+      "main": "int()"
+    }
+  ],
+  "all_symbols": [
+    {
+      "name": "main",
+      "type": "int()",
+      "scope_name": "global",
+      "scope_level": 0,
+      "line": null,
+      "is_array": false,
+      "array_size": null,
+      "init_value": null,
+      "is_param": false,
+      "final_value": null
+    },
+    {
+      "name": "x",
+      "type": "string",
+      "scope_name": "main",
+      "scope_level": 2,
+      "line": null,
+      "is_array": false,
+      "array_size": null,
+      "init_value": "\"hello, World\"",
+      "is_param": false,
+      "final_value": null
+    }
+  ]
+}

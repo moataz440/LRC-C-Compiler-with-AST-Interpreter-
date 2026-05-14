@@ -1,0 +1,14 @@
+{
+  "directives": [
+    {
+      "kind": "include",
+      "raw": "#include <iostream>",
+      "line": 1,
+      "args": "<iostream>"
+    }
+  ],
+  "macros": {},
+  "includes": [
+    "iostream"
+  ]
+}

@@ -1,0 +1,7 @@
+int main() {
+  int x = 2;
+  int y;
+  y = x + 3 * 4;
+  cout<<y;
+  return 0;
+}
