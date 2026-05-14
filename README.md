@@ -74,6 +74,21 @@ project/
 | Symbol Table | All variables with name, type, scope, and value |
 
 ---
+Output Files
+Every time you compile, the compiler automatically saves the full output of each phase as a file inside the output/ folder. You can open them directly without using the GUI.
+output/
+├── tokens.json          all tokens produced by the lexer
+├── preprocessor.json    directives found by the preprocessor
+├── parse_tree.json      full parse tree from the LR(1) parser
+├── ast.json             the Abstract Syntax Tree
+├── symbol_table.json    all declared variables with types and scopes
+├── lr_trace.json        step-by-step LR(1) parser trace
+├── tac.txt              Three-Address Code (TAC)
+├── program.asm          pseudo-assembly code
+├── program.obj          HTE-format object code
+└── run_result.json      program output and return value
+Every file is either plain text or JSON, so you can open any of them in any text editor or JSON viewer to inspect exactly what each phase of the compiler produced.
+---
 
 ## Getting Started
 
